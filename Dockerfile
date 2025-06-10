@@ -7,8 +7,7 @@ ARG GID=911
 ENV MIX_ENV=prod
 ENV VIX_COMPILATION_MODE=PLATFORM_PROVIDED_LIBVIPS
 
-RUN echo "http://nl.alpinelinux.org/alpine/latest-stable/main" >> /etc/apk/repositories \
-    && apk update \
+RUN apk update \
     && apk add git gcc g++ musl-dev make cmake file-dev vips-dev \
     exiftool imagemagick vips libmagic ncurses postgresql-client ffmpeg \
     openssl-dev
